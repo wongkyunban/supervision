@@ -1,0 +1,13 @@
+/* 
+  CheckUpdate.json
+  supervision
+
+  Created by waterway on 2017/1/5.
+  Copyright © 2017年 waterway. All rights reserved.
+*/
+//用于in-house app更新
+[{
+"version":"v1.0",
+ "description":"1.fix bug.#2.fix another bug",
+ "forceUpdate":"false"
+}]

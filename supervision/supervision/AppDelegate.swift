@@ -12,12 +12,41 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    var userData = UserData()
+    var wvc:WelcomePageViewController?
+    var navigationController:UINavigationController?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        //判断是否第一次打开app
+        let firstStarted = StorageUtils.getNormalDefault(keyName: "started") as? Bool
+        if firstStarted == nil{
+            self.wvc = WelcomePageViewController()
+            self.navigationController = UINavigationController(rootViewController: self.wvc!)
+            self.window?.rootViewController = self.navigationController
+            wvc?.startClosure = {
+                () -> Void in
+                self.startApp()
+            }
+            StorageUtils.setNormalDefault(keyName: "started", keyValue: false as AnyObject)
+        }else{
+            self.startApp()
+        }
+        self.window?.backgroundColor = UIColor.white
+        self.navigationController?.navigationBar.backgroundColor = UIColor.transform(fromHexString: "#1b7dc9")
+        self.window?.makeKeyAndVisible()
+        self.window?.addSubview((self.navigationController?.view)!)
         return true
     }
+    
+    func startApp(){
+        if self.wvc != nil {
+            self.wvc = nil
+        }
+        self.navigationController = UINavigationController(rootViewController: LoginViewController())
+        self.window?.rootViewController = self.navigationController
+    }
+    
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

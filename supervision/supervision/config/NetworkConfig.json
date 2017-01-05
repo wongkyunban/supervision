@@ -1,0 +1,15 @@
+{  "ServiceURL":"http://121.8.102.107:8888",
+    "WebViewURL":"http://121.33.200.117:9090",
+    "AttachmentURL":"http://121.33.200.117:9900",
+    "CaseAuditURL":"http://121.33.200.117:9090",
+    "UpdateURL":"http://121.33.200.117:9900/Download/Apk/CheckUpdate.json",
+    "IpaDownloadURL":"http://121.33.200.117:9900/Download/Apk/zf.ipa",
+    "LoginURL":"http://121.33.200.117:9090",
+    
+    "ServiceURLLan":"http://192.168.0.234:16588",
+    "WebViewURLLan":"http://121.33.200.117:9090",
+    "AttachmentURLLan":"http://192.168.0.234:9900",
+    "CaseAuditURLLan":"http://192.168.0.234:1120",
+    "UpdateURLLan":"http://192.168.0.234:9900/Download/Apk/CheckUpdate.json",
+    "IpaDownloadURLLan":"http://192.168.0.234:9900/Download/Apk/zf.ipa",
+    "LoginURLLan":"http://192.168.0.234:1120"}
